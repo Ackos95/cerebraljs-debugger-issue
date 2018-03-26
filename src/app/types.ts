@@ -1,4 +1,5 @@
 import * as sequences from './sequences';
+import { Dictionary } from '@cerebral/fluent';
 
 
 type TAppState = {
@@ -6,6 +7,7 @@ type TAppState = {
   plain: {
     shouldChangeValue: boolean;
   };
+  secondError: Dictionary<string>
 };
 
 type TAppSignals = {

@@ -14,6 +14,7 @@ const Home = connect()
     initialize: () => signals.initialize(),
     initializePlainBroken: () => signals.initializeBroken({ key: 'plain.shouldChangeValue' }),
     initializeSubmoduleBroken: () => signals.initializeBroken({ key: 'test.shouldChangeValue' }),
+    secondErrorSequence: () => signals.secondErrorSequence({ key: 'any' }),
   })).toClass((props) =>
     class HomePure extends React.PureComponent<typeof props> {
       render() {
@@ -36,6 +37,10 @@ const Home = connect()
               And to break an app (submodules) click
               <button onClick={this.props.initializeSubmoduleBroken}>here</button>
               and this should change "{this.props.submoduleChangedValue ? 'true' : 'false'}"
+            </p>
+            <p className="App-intro">
+              Second error example, simple action checking if key in dictionary, to break click
+              <button onClick={this.props.secondErrorSequence}>here</button>
             </p>
           </div>
         );

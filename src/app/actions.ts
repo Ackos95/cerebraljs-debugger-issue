@@ -14,8 +14,24 @@ const initializeBroken = ({ state, props }: Context<{
   console.log(state);
 };
 
+const isKeyInDict = ({ state, props }: Context<{
+  key: string,
+}>): boolean =>
+  !!state.secondError.get(props.key);
+
+const consoleLogTrue = (): void => {
+  console.log('true');
+};
+
+const consoleLogFalse = (): void => {
+  console.log('false');
+};
+
 
 export {
   initialize,
   initializeBroken,
+  isKeyInDict,
+  consoleLogTrue,
+  consoleLogFalse,
 };

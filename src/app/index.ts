@@ -1,4 +1,4 @@
-import { Module } from '@cerebral/fluent';
+import { Dictionary, Module } from '@cerebral/fluent';
 import { TAppState, TAppSignals } from './types';
 
 import * as sequences from './sequences';
@@ -9,7 +9,8 @@ const state: TAppState = {
   title: '',
   plain: {
     shouldChangeValue: false,
-  }
+  },
+  secondError: Dictionary({}),
 };
 
 const signals: TAppSignals = {
