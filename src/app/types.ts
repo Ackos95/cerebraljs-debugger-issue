@@ -3,7 +3,7 @@ import * as sequences from './sequences';
 
 type TAppState = {
   title: string;
-  test: {
+  plain: {
     shouldChangeValue: boolean;
   };
 };

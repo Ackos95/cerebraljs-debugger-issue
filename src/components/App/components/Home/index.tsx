@@ -9,9 +9,11 @@ const logo = require('./assets/images/logo.svg');
 const Home = connect()
   .with(({ state, signals }) => ({
     title: state.title,
-    changedValue: state.test.shouldChangeValue,
+    plainChangedValue: state.plain.shouldChangeValue,
+    submoduleChangedValue: state.test.shouldChangeValue,
     initialize: () => signals.initialize(),
-    initializeBroken: () => signals.initializeBroken({ key: 'test.shouldChangeValue' }),
+    initializePlainBroken: () => signals.initializeBroken({ key: 'plain.shouldChangeValue' }),
+    initializeSubmoduleBroken: () => signals.initializeBroken({ key: 'test.shouldChangeValue' }),
   })).toClass((props) =>
     class HomePure extends React.PureComponent<typeof props> {
       render() {
@@ -26,9 +28,14 @@ const Home = connect()
               <button onClick={this.props.initialize}>here</button>
             </p>
             <p className="App-intro">
-              And to break an app click
-              <button onClick={this.props.initializeBroken}>here</button>
-              and this should change "{this.props.changedValue ? 'true' : 'false'}"
+              And to break an app (plain object in state) click
+              <button onClick={this.props.initializePlainBroken}>here</button>
+              and this should change "{this.props.plainChangedValue ? 'true' : 'false'}"
+            </p>
+            <p className="App-intro">
+              And to break an app (submodules) click
+              <button onClick={this.props.initializeSubmoduleBroken}>here</button>
+              and this should change "{this.props.submoduleChangedValue ? 'true' : 'false'}"
             </p>
           </div>
         );

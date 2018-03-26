@@ -8,11 +8,16 @@ import {
 
 // modules
 import * as app from './app/types';
+import * as appTest from './app/modules/test/types';
 
 
-type TState = app.TAppState;
+type TState = app.TAppState & {
+  test: appTest.TAppTestState;
+};
 
-type TSignals = app.TAppSignals;
+type TSignals = app.TAppSignals & {
+  test: appTest.TAppTestSignals;
+};
 
 
 interface Context<Props = {}> extends IContext<Props> {
