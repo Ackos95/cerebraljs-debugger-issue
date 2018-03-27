@@ -8,7 +8,10 @@ import { AppTestModule } from './modules/test';
 const state: TAppState = {
   title: '',
   plain: {
-    shouldChangeValue: false,
+    shouldChangeValue: {
+      test: false,
+      value: null,
+    },
   },
   secondError: Dictionary({}),
 };

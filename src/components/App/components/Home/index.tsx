@@ -12,7 +12,13 @@ const Home = connect()
     plainChangedValue: state.plain.shouldChangeValue,
     submoduleChangedValue: state.test.shouldChangeValue,
     initialize: () => signals.initialize(),
-    initializePlainBroken: () => signals.initializeBroken({ key: 'plain.shouldChangeValue' }),
+    initializePlainBroken: () => signals.initializeBroken2({
+      key: 'plain.shouldChangeValue',
+      obj: {
+        test: true,
+        value: { test1: false, }
+      },
+    }),
     initializeSubmoduleBroken: () => signals.initializeBroken({ key: 'test.shouldChangeValue' }),
     secondErrorSequence: () => signals.secondErrorSequence({ key: 'any' }),
   })).toClass((props) =>

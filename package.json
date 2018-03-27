@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@cerebral/fluent": "^1.0.0",
-    "cerebral": "^4.2.0",
+    "@cerebral/fluent": "^1.0.1-1522102055181",
+    "cerebral": "^4.2.0-1522102055181",
     "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

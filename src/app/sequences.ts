@@ -12,6 +12,16 @@ const initializeBroken = SequenceWithProps<{
   .action(actions.initializeBroken)
 );
 
+const initializeBroken2 = SequenceWithProps<{
+  key: string,
+  obj: {
+    test: boolean,
+    value: { test1: boolean },
+  },
+}>(s => s
+  .action(actions.initializeBroken2)
+);
+
 const secondErrorSequence = SequenceWithProps<{
   key: string
 }>(s => s
@@ -28,6 +38,7 @@ const secondErrorSequence = SequenceWithProps<{
 export {
   initialize,
   initializeBroken,
+  initializeBroken2,
   secondErrorSequence,
 };
 

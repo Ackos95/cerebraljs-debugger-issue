@@ -5,7 +5,10 @@ import { Dictionary } from '@cerebral/fluent';
 type TAppState = {
   title: string;
   plain: {
-    shouldChangeValue: boolean;
+    shouldChangeValue: {
+      test: boolean;
+      value: { test1: boolean } | null;
+    };
   };
   secondError: Dictionary<string>
 };
